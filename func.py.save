@@ -6,20 +6,18 @@ import time
 import logging
 import wikipedia
 import time
-import os
-
 
 from weather import Weather, Unit
 
 startTime = time.time()
-api_key = os.environ.get("api_key")
+
 logging.getLogger("requests").setLevel(logging.WARNING)
 
 def getMsg (amount):
 	msglst = []
 	
 	parameters = {"limit": amount}
-	response = requests.get("https://api.groupme.com/v3/groups/22484502/messages?token="+api_key, params=parameters)
+	response = requests.get("https://api.groupme.com/v3/groups/22484502/messages?token=GgMETR5t0fbGNTOMyIC4YXxeXF0NVaK75AfEE3pn", params=parameters)
 		
 	data = response.json()
 	
@@ -37,7 +35,7 @@ def send(str):
 
 	rnd =''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5)) 
 	data = {"message":{"source_guid": rnd , "text": str}}	
-	send = requests.post("https://api.groupme.com/v3/groups/22484502/messages?token="+api_key, json=data)
+	send = requests.post("https://api.groupme.com/v3/groups/22484502/messages?token=GgMETR5t0fbGNTOMyIC4YXxeXF0NVaK75AfEE3pn", json=data)
 
 	return 1
 
@@ -172,3 +170,4 @@ def getUptime():
     
     time_seconds = time.time() - startTime
     send(str(int(time_seconds / 3600)) + " hours, " + str(int(time_seconds / 60)) + " minutes, " + str(int(time_seconds)) + " seconds")
+		

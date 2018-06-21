@@ -1,0 +1,40 @@
+/home/sherm/gmBot/script.py: line 1: import: command not found
+/home/sherm/gmBot/script.py: line 2: from: command not found
+/home/sherm/gmBot/script.py: line 3: $'\r': command not found
+/home/sherm/gmBot/script.py: line 4: $'\r': command not found
+/home/sherm/gmBot/script.py: line 5: syntax error near unexpected token `$':\r''
+/home/sherm/gmBot/script.py: line 5: `while(1):'
+/home/sherm/gmBot/script.py: line 1: import: command not found
+/home/sherm/gmBot/script.py: line 2: from: command not found
+/home/sherm/gmBot/script.py: line 3: $'\r': command not found
+/home/sherm/gmBot/script.py: line 4: $'\r': command not found
+/home/sherm/gmBot/script.py: line 5: syntax error near unexpected token `$':\r''
+/home/sherm/gmBot/script.py: line 5: `while(1):'
+/home/sherm/gmBot/script.py: line 1: import: command not found
+/home/sherm/gmBot/script.py: line 2: from: command not found
+/home/sherm/gmBot/script.py: line 3: $'\r': command not found
+/home/sherm/gmBot/script.py: line 4: $'\r': command not found
+/home/sherm/gmBot/script.py: line 5: syntax error near unexpected token `$':\r''
+/home/sherm/gmBot/script.py: line 5: `while(1):'
+/home/sherm/gmBot/script.py: line 1: import: command not found
+/home/sherm/gmBot/script.py: line 2: from: command not found
+/home/sherm/gmBot/script.py: line 3: $'\r': command not found
+/home/sherm/gmBot/script.py: line 4: $'\r': command not found
+/home/sherm/gmBot/script.py: line 5: syntax error near unexpected token `$':\r''
+/home/sherm/gmBot/script.py: line 5: `while(1):'
+Traceback (most recent call last):
+  File "/home/sherm/gmBot/script.py", line 7, in <module>
+    time.sleep(2)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/sherm/gmBot/script.py", line 6, in <module>
+    getMsg(1)
+  File "/home/sherm/gmBot/func.py", line 25, in getMsg
+    msglst.append(data["response"]["messages"][x]["text"])
+TypeError: 'NoneType' object has no attribute '__getitem__'
+Traceback (most recent call last):
+  File "/home/sherm/gmBot/script.py", line 6, in <module>
+    getMsg(1)
+  File "/home/sherm/gmBot/func.py", line 25, in getMsg
+    msglst.append(data["response"]["messages"][x]["text"])
+TypeError: 'NoneType' object has no attribute '__getitem__'
