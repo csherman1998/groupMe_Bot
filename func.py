@@ -95,7 +95,7 @@ def wiki(search_string):
 		str  = wikipedia.summary(search_string)
 		send(str)
 	except wikipedia.exceptions.DisambiguationError as e:
-		send("ambigious, options : " + e.options)	
+		send("ambigious, options : " + e.options[0]+" " + e.options[1] + " " + e.options[2]+ " ...")	
 	except wikipedia.exceptions.PageError as f:
 		send("uh, cringe... " + search_string + " doesn't exist, tf")
 	except wikipedia.exceptions.WikipediaException as g:
