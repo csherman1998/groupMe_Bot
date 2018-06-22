@@ -7,6 +7,7 @@ import logging
 import wikipedia
 import time
 import os
+import datetime
 
 
 from weather import Weather, Unit
@@ -89,15 +90,16 @@ def poll():
 	send(people[random.randint(1,len(people)-1)])
 
 def wiki(search_string):
-		ex = wikipedia.page(search_string)
-		text = "" 
-		text += ex.title + " " + ex.content + " "
-		splitted = text.split()
-		sendable = ""
-		for x in range(0,75):
-			sendable+= splitted[x] + " "
 		
-		send(sendable + "...")
+	try:
+		str  = wikipedia.summary(search_string)
+		send(str)
+	except wikipedia.exceptions.DisambiguationError as e:
+		send("ambigious, options : " + e.options)	
+	except wikipedia.exceptions.PageError as f:
+		send("uh, cringe... " + search_string + " doesn't exist, tf")
+	except wikipedia.exceptions.WikipediaException as g:
+		send("little fucko boingo")
 def help():
 	send("options : 'insult' : roast yourself, '8ball' : game, 'uptime' : uptime counter, 'weather' : spring and college station weather , 'coin flip': flip a coin")
 def weather():
@@ -170,5 +172,5 @@ def coinflip():
 
 def getUptime():
     
-    time_seconds = time.time() - startTime
-    send(str(int(time_seconds / 3600)) + " hours, " + str(int(time_seconds / 60)) + " minutes, " + str(int(time_seconds)) + " seconds")
+	time_seconds = time.time() - startTime
+	send(str(datetime.timedelta(seconds=time_seconds)))
