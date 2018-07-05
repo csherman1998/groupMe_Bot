@@ -25,11 +25,11 @@ def getMsg (amount):
 	data = response.json()
 	
 	for x in range(0, amount):
-		msglst.append(data["response"]["messages"][x]["text"])
-		#print msglst[x]
-		if msglst[x] is not None and "@bot " in msglst[x].encode("utf-8") :
-			processMsg(msglst[x].encode("utf-8"))
-		
+            if (data["response"]["messages"][x]["text"]) is not None:
+                msglst.append(data["response"]["messages"][x]["text"])
+                        #print msglst[x]
+            if msglst and "@bot " in msglst[x].encode("utf-8") :
+		processMsg(msglst[x].encode("utf-8"))
 	return 1
 
 			
@@ -47,8 +47,6 @@ def processMsg(strn):
 	rnd = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range (5))
 	
 	#print "here"]
-	if "rape" in strn:
-		send("live rape")
 	if "coin flip" in strn:
 		#print "true"
 		coinflip()
