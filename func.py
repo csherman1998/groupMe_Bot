@@ -25,11 +25,13 @@ def getMsg (amount):
 	data = response.json()
 	
 	for x in range(0, amount):
-            if (data["response"]["messages"][x]["text"]) is not None:
-                msglst.append(data["response"]["messages"][x]["text"])
-                        #print msglst[x]
-            if msglst and "@bot " in msglst[x].encode("utf-8") :
-		processMsg(msglst[x].encode("utf-8"))
+		try:
+			if (data["response"]["messages"][x]["text"]) is not None:
+				msglst.append(data["response"]["messages"][x]["text"])
+		except AttributeError:
+			time.sleep(2)
+            	if msglst and "@bot " in msglst[x].encode("utf-8") :
+			processMsg(msglst[x].encode("utf-8"))
 	return 1
 
 			
@@ -139,13 +141,13 @@ def ball(ballnum):
 		message =  "You may rely on it"
 		
 	elif ballnum == 4:
-		message = "Shut the fuck up retard"
+		message = "reeeeeee"
 		
 	elif ballnum == 5:
 		message ="cringe^"
 		
 	elif ballnum ==6:
-		message = "paise on a childd"
+		message = "paise"
 		
 	elif ballnum ==7:
 		message = "My reply is no"
